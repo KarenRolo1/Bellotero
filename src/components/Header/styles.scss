@@ -1,0 +1,38 @@
+@import '../../assets/sass/variables';
+.header{
+    a{
+        font-size: 14px;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.3px;
+        color: $primary !important;
+    } 
+}
+@media (min-width: 768px) {
+    .header{
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1092px;
+        padding: 0px 1rem !important;
+        background: $secondary;
+        height: 64px;
+        a{
+            border-top:4px solid transparent; 
+            margin:0px 20px;
+            padding:21px 0px;
+            &.active {
+                border-top:4px solid $primary; 
+            }
+        } 
+    }
+}
+@media (max-width: 767px) {
+    .header{
+        a{
+            &.active {
+                font-weight: bold;
+            }
+        } 
+    }
+}

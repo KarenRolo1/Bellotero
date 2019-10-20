@@ -1,0 +1,15 @@
+@import '../../assets/sass/variables';
+.testimonial{
+    &_title{
+        width: 389px;
+        height: 56px;
+        background-color: $primary;
+        span{
+            font-size: 36px;
+            font-weight: 900;
+            font-stretch: normal;
+            font-style: normal;
+            color: $secondary;
+        }
+    }
+}

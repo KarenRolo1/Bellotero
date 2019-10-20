@@ -14,12 +14,8 @@ function App() {
     <Router>
       <Header />
         <Switch>
-          <Route path="/testimonial">
-            <Testimonial />
-          </Route>
-          <Route path="/configuration">
-            <Configuration />
-          </Route>
+          <Route exact path="/" component={Testimonial}/>
+          <Route path="/configurator" component={Configuration} /> 
         </Switch>
     </Router>
   );

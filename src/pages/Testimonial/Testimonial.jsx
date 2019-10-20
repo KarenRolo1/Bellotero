@@ -1,33 +1,24 @@
 import React, { Component } from 'react';
 import { CarouselComponent } from '../../components/Carousel'
 import './style.scss';
+import { connect } from 'react-redux';
 
 class Testimonial extends Component{
     constructor(props) {
         super(props);
-        this.data = [{
-            name : "Karen",
-            position : "Director",
-            comment : "cko osj ddowmdow djie dninedi dni niniwnid nid enidn in id indienin di"
-        },
-        {
-            name : "Tania",
-            position : "LALALALA",
-            comment : "cko osj ddowmdow djie dninedi dni niniwnid nid enidn in id indienin di"
-        }
-    ];
+        this.data = this.props.testimonialData.data.slider;        
     }
     render = () =>{
         return(
-            <div class="container testimonial" >
-                <div class="row">
-                    <div class="col-md-12">
+            <div className="container testimonial" >
+                <div className="row">
+                    <div className="col-md-12">
                         <div className=" testimonial_title">
-                            <p>Our customers love us</p>
+                            <p>{this.data.title}</p>
                         </div>
                     </div>
-                    <div class="col-md-12 testimonial_carousel">
-                        <CarouselComponent reviews={this.data}/>
+                    <div className="col-md-12 testimonial_carousel">
+                        <CarouselComponent reviews={this.data.reviews}/>
                     </div>
                 </div>
             </div>
@@ -35,4 +26,10 @@ class Testimonial extends Component{
     }
 }
 
-export default Testimonial
+function mapStateToProps(state) {
+    return {
+        testimonialData: state.testimonialData
+    }
+}
+
+export default connect(mapStateToProps, null)(Testimonial);

@@ -3,12 +3,11 @@ import {Carousel} from 'react-bootstrap'
 import './styles.scss';
 
 const CarouselComponent = (props) => {
-    console.log("propssssssssssss", props)
     return(
         <Carousel>
-            {props.reviews.map((item)=>{
+            {props.reviews.map((item, i)=>{
                 return(
-                    <Carousel.Item>
+                    <Carousel.Item key = {i}>
                         <div className="row carouselItem">
                             <div className="col-md-4 carouselItem_name">
                                 <h2>{item.name}</h2>

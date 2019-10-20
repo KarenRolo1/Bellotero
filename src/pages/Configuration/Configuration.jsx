@@ -1,44 +1,49 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './style.scss';
 
 class Configuration extends Component{
+    constructor(props) {
+        super(props);
+        this.data = this.props.configuratorData.data.calculator;        
+    }
     render = () =>{
         return(
-            <div class="container configurator" >
-                <div class="row justify-content-between">
-                    <div class="col-md-5 configurator_description">
+            <div className="container configurator" >
+                <div className="row justify-content-between">
+                    <div className="col-md-5 configurator_description">
                         <span className=" configurator_description_title">
-                            Save more with Bellotero.io
+                            {this.data.title}
                         </span>
                         <p>
-                            With Bellotero.io you save time and money make real-time decisions that boost your business and your bottom line. Get less wrongfully blocked payments, save time on bookkeeping and no need to worry about safety. 
+                            {this.data.description}
                         </p>
                     </div>
-                    <div class="col-md-6 configurator_calculator">
+                    <div className="col-md-6 configurator_calculator">
                         <div className="my-5">
-                            <label className="configurator_calculator_label">Monthly ingredient spending</label>
+                            <label className="configurator_calculator_label">{this.data.description1}</label>
                             <div className="configurator_calculator_input">
                                 <p>$</p>
                             </div>
                             <input type="range" className="custom-range" id="customRange1" />
                         </div>
                         <div className="my-5">
-                            <label className="configurator_calculator_label">Full-time employees that  process invoices</label>
+                            <label className="configurator_calculator_label">{this.data.description2}</label>
                             <div className="configurator_calculator_input">
                                 <p>$</p>
                             </div>
                             <input type="range" className="custom-range" id="customRange2" />
                         </div>
                         <div className="row">
-                            <div class="col-sm-6 result">
+                            <div className="col-sm-6 result">
                                 <span className="configurator_calculator_simbol">$</span>
                                 <span className="configurator_calculator_quantity">36.211</span>
-                                <p>Estimated cost food savings</p>
+                                <p>{this.data.description3}</p>
                             </div>
-                            <div class="col-sm-6 result">
+                            <div className="col-sm-6 result">
                                 <span className="configurator_calculator_simbol">$</span>
                                 <span className="configurator_calculator_quantity">8.611</span>                            
-                                <p>Your estimated annual savings</p>
+                                <p>{this.data.description4}</p>
                             </div>
                         </div>
                     </div>
@@ -48,4 +53,10 @@ class Configuration extends Component{
     }
 }
 
-export default Configuration
+function mapStateToProps(state) {
+    return {
+        configuratorData: state.configuratorData
+    }
+}
+
+export default connect(mapStateToProps, null)(Configuration);

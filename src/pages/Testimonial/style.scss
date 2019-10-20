@@ -1,15 +1,21 @@
 @import '../../assets/sass/variables';
 .testimonial{
+    padding: 60px 0px;
     &_title{
-        width: 389px;
         height: 56px;
         background-color: $primary;
-        span{
+        padding: 8px 4px;
+        margin: 60px 0px 40px 0px;
+        width: max-content;
+        p{
             font-size: 36px;
             font-weight: 900;
             font-stretch: normal;
             font-style: normal;
+            line-height: 1.11;
+            letter-spacing: 0.77px;
             color: $secondary;
+            margin-bottom: 0px;
         }
     }
 }

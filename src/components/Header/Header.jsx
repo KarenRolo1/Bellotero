@@ -6,7 +6,8 @@ import './styles.scss';
 
 const Header = () => {
     return(
-      <Navbar className="header">
+      <Navbar className="header" expand="lg">
+        <div className="container">
         <Navbar.Brand href="#home">
           <img alt="" src={bellotero} className="d-inline-block align-top"/>
         </Navbar.Brand>
@@ -21,6 +22,7 @@ const Header = () => {
             <Nav.Link href="#link5">Blog</Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        </div>
       </Navbar>
     )
 }

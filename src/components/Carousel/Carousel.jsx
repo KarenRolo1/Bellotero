@@ -2,20 +2,26 @@ import React from "react";
 import {Carousel} from 'react-bootstrap'
 import './styles.scss';
 
-const CarouselComponent = () => {
+const CarouselComponent = (props) => {
+    console.log("propssssssssssss", props)
     return(
         <Carousel>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src="holder.js/800x400?text=First slide&bg=373940"
-                    alt="First slide"
-                />
-                <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
+            {props.reviews.map((item)=>{
+                return(
+                    <Carousel.Item>
+                        <div className="row carouselItem">
+                            <div className="col-md-4 carouselItem_name">
+                                <h2>{item.name}</h2>
+                                <p>{item.position}</p>
+                            </div>
+                            <div className="col-md-8 carouselItem_comment">
+                                {item.comment}
+                            </div>
+                        </div>
+                    </Carousel.Item>
+                )
+            })
+            }
         </Carousel>
     )
 }

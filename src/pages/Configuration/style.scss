@@ -1,0 +1,22 @@
+@import '../../assets/sass/variables';
+.configurator{
+    margin: 120px 0px;
+    &_title{
+        font-size: 36px;
+        font-weight: 900;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: 0.77px;
+        color: $secondary;
+        background-color: $primary;
+    }
+    p{
+        margin-top: 32px;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+    }
+}

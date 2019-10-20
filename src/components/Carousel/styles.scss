@@ -1,0 +1,16 @@
+@import '../../assets/sass/variables';
+.carouselItem{
+    height: 254px;
+    background-color: $secondary;
+    font-size: 32px;
+    color: $black;
+    margin-top:40px;
+    padding: 32px;
+    max-width: 1002;
+    &_name{        
+        p{
+            color:$gray;
+            font-size: 14px;
+        }
+    }
+}

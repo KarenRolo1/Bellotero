@@ -7,10 +7,10 @@ const initialState = {
 };
 
 const testimonialData = (state = initialState, action) => {
-  state = initialState;
+  //state = initialState;
   switch (action.type) {
     case TESTIMONIAL:
-      return { data: action.data};
+      return {...state, data: action.data};
     default:
       return state;
   }

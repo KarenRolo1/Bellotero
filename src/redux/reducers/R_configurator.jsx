@@ -7,10 +7,10 @@ const initialState = {
 };
 
 const configuratorData = (state = initialState, action) => {
-    state = initialState;
+    //state = initialState;
     switch (action.type) {
         case CONFIGURATOR:
-            return { data: action.data};
+            return {...state, data: action.data};
         default:
             return state;
     }

@@ -25,9 +25,9 @@ export class App extends Component{
       <Router>
         <Header />
           <Switch>
-            <Route exact path="/" component={Testimonial}/>
-            <Route path="/page-1" component={Testimonial}/>
-            <Route path="/page-2" component={Configuration} />  
+            <Route exact path="/" component={Testimonial}/> 
+            <Route path="/page-1" component={Testimonial}/> 
+            <Route path="/" component={Configuration} />  
           </Switch>
       </Router>
     );

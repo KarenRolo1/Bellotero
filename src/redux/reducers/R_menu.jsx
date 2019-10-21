@@ -7,11 +7,10 @@ const initialState = {
 };
 
 const menuData = (state = initialState, action) => {
-  console.log("reducerrrrrrrr", action);
-  state = initialState;
+  //state = initialState;
   switch (action.type) {
     case MENU:
-      return { data: action.data};
+      return {...state, data: action.data};
     default:
       return state;
   }

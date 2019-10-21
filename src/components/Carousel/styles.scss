@@ -1,6 +1,6 @@
 @import '../../assets/sass/variables';
 .carouselItem{
-    height: 254px;
+    min-height: 254px;
     background-color: $secondary;
     font-size: 32px;
     color: $black;

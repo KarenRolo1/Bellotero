@@ -6,7 +6,6 @@ import { sendTestimonialData } from '../redux/actions/A_testimonial';
 import { sendConfiguratorData } from '../redux/actions/A_configurator';
 import { sendMenuData } from '../redux/actions/A_menu';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import {
   BrowserRouter as Router,
   Route,

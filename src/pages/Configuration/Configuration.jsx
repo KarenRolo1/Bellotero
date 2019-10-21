@@ -46,14 +46,14 @@ class Configuration extends Component{
                         <div className="my-5">
                             <label className="configurator_calculator_label">{this.data.description1}</label>
                             <div className="configurator_calculator_input">
-                                <p>{'$' + this.state.monthlyIngredient}</p>
+                                <span className="questionMark">{'$'}</span><span>{this.state.monthlyIngredient}</span>
                             </div>
                             <input type="range" className="custom-range" id="customRange1" min="10" max="100" onChange={(e)=>this.onChange('customRange1',e)}/>
                         </div>
                         <div className="my-5">
                             <label className="configurator_calculator_label">{this.data.description2}</label>
                             <div className="configurator_calculator_input">
-                                <p>{'$' + this.state.fooltimeEmployees}</p>
+                                <span>{this.state.fooltimeEmployees}</span>
                             </div>
                             <input type="range" className="custom-range" id="customRange2" min="1" max="10" onChange={(e)=>this.onChange('customRange2', e)}/>
                         </div>

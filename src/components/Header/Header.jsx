@@ -17,7 +17,7 @@ const Header = (props) => {
           <Nav className="ml-auto">
             {(menuItems) ? menuItems.map((item, i)=>{
               return(
-                <Nav.Link href={"/"+item.route+""}>{item.text}</Nav.Link>
+                <Nav.Link key={i} href={"/"+item.route+""}>{item.text}</Nav.Link>
               )
             }): ''}
           </Nav>

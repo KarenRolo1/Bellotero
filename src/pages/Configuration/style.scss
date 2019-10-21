@@ -39,14 +39,20 @@
         &_input{
             display: inline-flex;
             float: right;
-            height: 52px;
+            //height: 52px;
             background-color: $secondary;
             border-radius: 4px;
             border: solid 1px #d6dcff;
             font-size: 36px;
             font-weight: 500;
             color: $black;
-            p{
+            padding: 12px 6px;
+            line-height: 1.11;
+            letter-spacing: 0.77px;
+            span{
+                margin-left: 33px;
+            }
+            .questionMark{
                 color: $gray;
                 font-size: 24px;
                 margin: auto;

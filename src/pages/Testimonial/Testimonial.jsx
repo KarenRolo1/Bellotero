@@ -18,7 +18,7 @@ class Testimonial extends Component{
                     <div className="col-md-12 testimonial_carousel">
                         <CarouselComponent reviews={this.data.reviews}/>
                     </div>
-                </div>:""}
+                </div>:<div></div>}
             </div>
         )
     }

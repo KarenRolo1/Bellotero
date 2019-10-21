@@ -5,6 +5,7 @@ export function sendMenuData(){
   return dispatch =>{
     axios.get("http://localhost:3001/menu")
     .then(response=>{
+      console.log("dispatchiiiiiiiiiiiing", response);
       dispatch({
         type : MENU,
         data : response.data

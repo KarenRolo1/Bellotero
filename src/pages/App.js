@@ -16,24 +16,26 @@ import {
 export class App extends Component{
   constructor(props) {
     super(props);
-    this.props.actions.sendMenuData();
-    this.props.actions.sendTestimonialData();
-    this.props.actions.sendConfiguratorData();
+    this.props.action2();
+    this.props.action();
+    this.props.action1();
   }
   render() {
     return (
       <Router>
         <Header />
           <Switch>
-            <Route exact path="/Testimonial" component={Testimonial}/>
-            <Route path="/" component={Configuration} />  
+            <Route exact path="/" component={Testimonial}/>
+            <Route path="/page-1" component={Testimonial}/>
+            <Route path="/page-2" component={Configuration} />  
           </Switch>
       </Router>
     );
   }
 }
-
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({ sendTestimonialData, sendConfiguratorData, sendMenuData}, dispatch)
+const mapDispatchToProps = (dispatch) => ({
+  action : () => dispatch(sendTestimonialData()),
+  action1 :  () => dispatch(sendConfiguratorData()),
+  action2 :  () => dispatch(sendMenuData()),
 });
 export default connect(null, mapDispatchToProps)(App);

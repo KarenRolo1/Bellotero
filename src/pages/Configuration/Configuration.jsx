@@ -45,7 +45,7 @@ class Configuration extends Component{
                             </div>
                         </div>
                     </div>
-                </div> :''
+                </div> :<div>Calculator</div>
                 }
             </div>
         )

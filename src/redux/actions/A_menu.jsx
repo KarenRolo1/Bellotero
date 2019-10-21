@@ -1,30 +1,14 @@
 import { MENU } from './action-types';
+import axios from 'axios';
 
 export function sendMenuData(){
-  let datos = {
-    "menu": {
-      "items": [
-        {
-          "text": "Testimonial",
-          "route": "/"
-        },
-        {
-          "text": "Configurator",
-          "route": "page-2"
-        },
-        {
-          "text": "Stories",
-          "route": "#"
-        },
-        {
-          "text": "About",
-          "route": "#"
-        }
-      ]
-    }
+  return dispatch =>{
+    axios.get("http://localhost:3001/menu")
+    .then(response=>{
+      dispatch({
+        type : MENU,
+        data : response.data
+      })
+    })
   }
-  return {
-    type : MENU,
-    data : datos
-  };
 }

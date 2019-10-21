@@ -9,28 +9,24 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link
+  Switch
 } from "react-router-dom";  
 
 export class App extends Component{
   constructor(props) {
     super(props);
     this.props.actions.sendMenuData();
-    console.log("menuuuuuuuu", this.props);
     this.props.actions.sendTestimonialData();
-    console.log("dataaaaaaaaa", this.props);
     this.props.actions.sendConfiguratorData();
-    console.log("configggggggggggg", this.props);
   }
   render() {
     return (
       <Router>
         <Header />
           <Switch>
-            <Route exact path="/" component={Testimonial}/>
-            <Route path="/configuration" component={Configuration} /> 
+            <Route exact path="/Testimonial" component={Testimonial}/>
+            <Route path="/" component={Configuration} />  
           </Switch>
       </Router>
     );

@@ -5,25 +5,24 @@ import { connect } from 'react-redux';
 import './styles.scss';
 
 const Header = (props) => {
-  console.log("headeeeeeeeeeeer", props);
-  let menuItems = props.menuData.data.menu.items;
+  let menuItems = props.menuData.data.items;
     return(
       <Navbar className="header" expand="lg">
-        <div className="container">
+       <div className="container">
         <Navbar.Brand href="#home">
           <img alt="" src={bellotero} className="d-inline-block align-top"/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            {menuItems.map((item, i)=>{
+            {(menuItems) ? menuItems.map((item, i)=>{
               return(
                 <Nav.Link href={"/"+item.route+""}>{item.text}</Nav.Link>
               )
-            })}
+            }): ''}
           </Nav>
         </Navbar.Collapse>
-        </div>
+        </div> 
       </Navbar>
     )
 }

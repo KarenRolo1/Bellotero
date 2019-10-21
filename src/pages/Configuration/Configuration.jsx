@@ -3,13 +3,11 @@ import { connect } from 'react-redux';
 import './style.scss';
 
 class Configuration extends Component{
-    constructor(props) {
-        super(props);
-        this.data = this.props.configuratorData.data.calculator;        
-    }
     render = () =>{
+        this.data = this.props.configuratorData.data; 
         return(
             <div className="container configurator" >
+                {(this.data)?
                 <div className="row justify-content-between">
                     <div className="col-md-5 configurator_description">
                         <span className=" configurator_description_title">
@@ -47,7 +45,8 @@ class Configuration extends Component{
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> :''
+                }
             </div>
         )
     }
